@@ -41,12 +41,13 @@ set(SOURCE_FILES
     sex_ploidy_map.h sex_ploidy_map.cpp
     bcf_utils.h bcf_utils.cpp
     qbcf_cally.cpp
+    qbcf_test_qgenlib.cpp
     qbcf.h qbcf.cpp
     )
 
 SET(APP_EXE qbcf)
 
-find_package(OpenMP REQUIRED)
+#find_package(OpenMP REQUIRED)
 ADD_EXECUTABLE(${APP_EXE} ${SOURCE_FILES})
 
 find_library(ZLIB z HINTS /usr/lib/x86_64-linux-gnu/ /usr/lib/ /usr/lib64/)

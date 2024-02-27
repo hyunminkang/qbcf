@@ -2,6 +2,7 @@
 #include "qgenlib/commands.h"
 #include "qgenlib/qgen_utils.h"
 
+int32_t qbcf_test_qgenlib(int32_t argc, char** argv);
 int32_t qbcf_callY(int32_t argc, char** argv);
  
 int32_t main(int32_t argc, char** argv) {
@@ -10,6 +11,9 @@ int32_t main(int32_t argc, char** argv) {
   BEGIN_LONG_COMMANDS(longCommandlines)
     LONG_COMMAND_GROUP("QGEN-based BCF tools", NULL)
     LONG_COMMAND("cally", &qbcf_callY, "Call chrY variants from AD-present BCFs")
+
+    LONG_COMMAND_GROUP("Miscellaneous tools", NULL)
+    LONG_COMMAND("test-qgenlib", &qbcf_test_qgenlib, "Test basic functionalities in qgenlib")
   END_LONG_COMMANDS();
 
   cl.Add(new longCommands("Available Commands", longCommandlines));

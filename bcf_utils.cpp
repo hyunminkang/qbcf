@@ -124,7 +124,7 @@ std::string& bcf_record::get_var_ID() {
   varID.assign(bcf_get_chrom(hdr,rec));
   varID += ":";
   char buf[256];
-  sprintf(buf,"%zd", rec->pos);
+  snprintf(buf, 256, "%zu", (size_t)rec->pos);
   varID += buf;
   for(int32_t i=0; i < rec->n_allele; ++i) {
     varID += ":";
